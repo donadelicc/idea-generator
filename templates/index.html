@@ -4,11 +4,21 @@
     <title>Flask GPT-4 App</title>
 </head>
 <body>
-    <form action="/" method="post">
-        <input type="text" name="user_input" placeholder="Ask something...">
-        <input type="submit" value="Get Response">
-    </form>
 
+    <h1>Syretest AI</h1>
+
+    <p>Skriv inn problemet du ønsker å syreteste - jo mer detaljert problembeskrivelsen er, desto bedre løsninger vil du motta.</p>
+    
+    <p>"Eldrebølgen" er ikke en god nok problembeskrivelse. Prøv heller for eksempel: </p>
+    <p> "Hvordan kan vi tilrettelegge for at eldre mennesker med nedsatt mobilitet kan opprettholde en aktiv og sosial livsstil i urbane områder?"</p>
+
+    <div name="form">
+        <form action="/" method="post">
+            <input type="text" name="user_input" placeholder="Hvordan kan ...">
+            <input type="submit" value="Generer ideer">
+        </form>
+    </div>
+   
     {% if response_text %}
         <p>Response: {{ response_text }}</p>
     {% endif %}
