@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Flask GPT-4 App</title>
+</head>
+<body>
+    <form action="/" method="post">
+        <input type="text" name="user_input" placeholder="Ask something...">
+        <input type="submit" value="Get Response">
+    </form>
+
+    {% if response_text %}
+        <p>Response: {{ response_text }}</p>
+    {% endif %}
+</body>
+</html>
