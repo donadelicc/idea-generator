@@ -21,8 +21,6 @@ import logging
 load_dotenv()
 
 
-
-
 embeddings = AzureOpenAIEmbeddings(
 
     openai_api_version="2023-07-01-preview",
@@ -59,7 +57,6 @@ Dine løsninger skal bygge på kunnskap og trender fra ulike bransjer, teknologi
 Under har du er en mal på hva en syretest kan inneholde.
 Det er ikke obligatorisk at alle punktene i Syretestmalen skal besvarer.
 Du må gjøre en vurdering på hvilke aspekter som er mest sentrale å belyse i forhold til problemstillingen. \
-
 Syretestmal: {context}
 
 """
@@ -82,15 +79,12 @@ prompt = ChatPromptTemplate.from_messages(
     ]
 )
 
-
 rag_chain = (
     {"context": retriever | format_docs, "input": RunnablePassthrough()}
     | prompt
     | model
     | StrOutputParser()
 )
-
-
 
 
 @app.route('/', methods=['GET', 'POST'])
@@ -104,10 +98,10 @@ def index():
     return render_template('index.html', response_text=response_text)
 
 
-# if __name__ == '__main__':
-#     app.run(debug=True)
+if __name__ == '__main__':
+    app.run(debug=True)
     
 
-if __name__ == '__main__':
-    app.run(host='0.0.0.0', port=8000, debug=True)
+# if __name__ == '__main__':
+#     app.run(host='0.0.0.0', port=8000, debug=True)
     
