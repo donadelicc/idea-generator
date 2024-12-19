@@ -2,9 +2,6 @@ Flask
 gunicorn
 langchain
 langgraph
-langchain_openai
-langchain-community
-chromadb
-langchain-chroma
+langchain_community
 python-dotenv
 pypdf

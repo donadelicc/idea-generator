@@ -29,9 +29,7 @@ from PROMPT import SYSTEM_PROMPT, SYRESTESTMAL
 
 load_dotenv()
 
-
 embeddings = AzureOpenAIEmbeddings(
-
     openai_api_version="2023-07-01-preview",
     azure_deployment="text-embedding-ada-002",
 )
