@@ -25,7 +25,7 @@
             </section>
 
             <section class="input-section">
-                <form action="/" method="post">
+                <form action="/" method="post" id="problemForm">
                     <div class="form-group">
                         <input type="text" 
                                name="user_input" 
@@ -34,6 +34,7 @@
                         <button type="submit">Generer ideer</button>
                     </div>
                 </form>
+                <div class="spinner" id="loadingSpinner"></div>
             </section>
 
             {% if response_text %}
@@ -50,5 +51,11 @@
             <p> 2025 Preben Andersen</p>
         </footer>
     </div>
+
+    <script>
+        document.getElementById('problemForm').addEventListener('submit', function() {
+            document.getElementById('loadingSpinner').style.display = 'block';
+        });
+    </script>
 </body>
 </html>
