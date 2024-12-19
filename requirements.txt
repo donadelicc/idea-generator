@@ -1,6 +1,7 @@
 Flask
 gunicorn
 langchain
+langgraph
 langchain_openai
 langchain-community
 chromadb
