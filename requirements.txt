@@ -3,5 +3,6 @@ gunicorn
 langchain
 langgraph
 langchain_community
+langchain_openai
 python-dotenv
 pypdf
