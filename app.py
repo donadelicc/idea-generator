@@ -55,7 +55,7 @@ Datainformert Innsikt: Du skal bruke innsikt fra et bredt spekter av datakilder 
 Dine løsninger skal bygge på kunnskap og trender fra ulike bransjer, teknologier, og samfunnsforhold.
 
 Under har du er en mal på hva en syretest kan inneholde.
-Det er ikke obligatorisk at alle punktene i Syretestmalen skal besvarer.
+Det er ikke obligatorisk at alle punktene i Syretestmalen skal besvares.
 Du må gjøre en vurdering på hvilke aspekter som er mest sentrale å belyse i forhold til problemstillingen. \
 Syretestmal: {context}
 
