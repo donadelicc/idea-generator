@@ -115,7 +115,7 @@ button:hover {
 }
 
 footer {
-    margin-top: 3rem;
+    margin-top: auto;
     text-align: center;
     color: var(--primary);
     opacity: 0.8;
