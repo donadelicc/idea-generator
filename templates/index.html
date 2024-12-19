@@ -1,30 +1,53 @@
 <!DOCTYPE html>
-<html>
+<html lang="no">
 <head>
-    <title>Flask GPT-4 App</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Syretest AI</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles/index.css') }}">
 </head>
 <body>
+    <div class="container">
+        <header>
+            <h1>AI for Syretest</h1>
+        </header>
 
-    <h1>Syretest AI</h1>
+        <main>
+            <section class="description">
+                <p class="intro">Skriv inn problemet du ønsker å syreteste - jo mer detaljert problembeskrivelsen er, desto bedre løsninger vil du motta.</p>
+                
+                <div class="example-box">
+                    <h2>Eksempel:</h2>
+                    <p class="not-good">"Eldrebølgen" er ikke en god nok problembeskrivelse.</p>
+                    <p class="good">Prøv heller: "Hvordan kan vi tilrettelegge for at eldre mennesker med nedsatt mobilitet kan opprettholde en aktiv og sosial livsstil i urbane områder?"</p>
+                </div>
+            </section>
 
-    <p>Skriv inn problemet du ønsker å syreteste - jo mer detaljert problembeskrivelsen er, desto bedre løsninger vil du motta.</p>
-    
-    <p>"Eldrebølgen" er ikke en god nok problembeskrivelse. Prøv heller for eksempel: </p>
-    <p> "Hvordan kan vi tilrettelegge for at eldre mennesker med nedsatt mobilitet kan opprettholde en aktiv og sosial livsstil i urbane områder?"</p>
+            <section class="input-section">
+                <form action="/" method="post">
+                    <div class="form-group">
+                        <input type="text" 
+                               name="user_input" 
+                               placeholder="Hvordan kan ..."
+                               required>
+                        <button type="submit">Generer ideer</button>
+                    </div>
+                </form>
+            </section>
 
-    <div name="form">
-        <form action="/" method="post">
-            <input type="text" name="user_input" placeholder="Hvordan kan ...">
-            <input type="submit" value="Generer ideer">
-        </form>
+            {% if response_text %}
+            <section class="response-section">
+                <div class="response-box">
+                    <h2>Resultat</h2>
+                    <p>{{ response_text }}</p>
+                </div>
+            </section>
+            {% endif %}
+        </main>
+
+        <footer>
+            <p>&copy; 2024 Preben Andersen</p>
+        </footer>
     </div>
-   
-    {% if response_text %}
-        <p>Response: {{ response_text }}</p>
-    {% endif %}
-
-    <footer>
-        <p>Preben Andersen</p>
-    </footer>
 </body>
 </html>

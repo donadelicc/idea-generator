@@ -6,4 +6,4 @@ langchain-community
 chromadb
 langchain-chroma
 python-dotenv
-pysqlite3-binary
+pypdf

@@ -1,7 +1,3 @@
-__import__('pysqlite3')
-import sys
-sys.modules['sqlite3'] = sys.modules.pop('pysqlite3')
-
 from flask import Flask, request, render_template
 from langchain_openai import AzureChatOpenAI, AzureOpenAIEmbeddings
 
@@ -97,7 +93,8 @@ def index():
     if request.method == 'POST':
         input = request.form['user_input']
         response_text = rag_chain.invoke(input)
-        vectorstore.delete_collection()
+        #vectorstore.delete_collection()
+        vectorstore.reset_collection()
 
     return render_template('index.html', response_text=response_text)
 
