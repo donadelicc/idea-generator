@@ -1,17 +1,11 @@
 from flask import Flask, request, render_template
 from langchain_openai import AzureChatOpenAI, AzureOpenAIEmbeddings
 
-from langchain.chains import create_retrieval_chain
-from langchain.chains.combine_documents import create_stuff_documents_chain
-from langchain.chains import LLMChain
 
 from langchain_core.prompts import ChatPromptTemplate
-from langchain_core.messages import HumanMessage, SystemMessage
 
-from langchain_chroma import Chroma
 from langchain_community.document_loaders import PyPDFLoader
 from langchain_text_splitters import RecursiveCharacterTextSplitter
-from langchain_core.runnables import RunnablePassthrough
 from langchain_core.vectorstores import InMemoryVectorStore
 
 from langgraph.graph import START, StateGraph
@@ -19,7 +13,6 @@ from langchain_core.documents import Document
 from typing_extensions import List, TypedDict
 
 
-from langchain_core.output_parsers import StrOutputParser
 
 from dotenv import load_dotenv
 import os
