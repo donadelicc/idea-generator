@@ -4,7 +4,6 @@ from langchain_openai import AzureChatOpenAI, AzureOpenAIEmbeddings
 
 from langchain_core.prompts import ChatPromptTemplate
 
-from langchain_community.document_loaders import PyPDFLoader
 from langchain_text_splitters import RecursiveCharacterTextSplitter
 from langchain_core.vectorstores import InMemoryVectorStore
 
@@ -19,6 +18,7 @@ import os
 import logging
 
 from PROMPT import SYSTEM_PROMPT, SYRESTESTMAL
+from get_blob import load_pdf_from_blob
 
 load_dotenv()
 
@@ -41,8 +41,8 @@ azure_logger = logging.getLogger('azure.core')
 azure_logger.setLevel(logging.WARNING)
 
 
-loader = PyPDFLoader("./data/Syretestmal.pdf")
-docs = loader.load()
+docs = load_pdf_from_blob()
+print(docs)
 
 vector_store = InMemoryVectorStore(embeddings)
 

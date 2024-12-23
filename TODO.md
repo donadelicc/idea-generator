@@ -1,6 +1,4 @@
 
-
-
 - Much better instructions needed to get better and more structured responses from the model
     - Maybe a JSON response needed to ensure structure
 
